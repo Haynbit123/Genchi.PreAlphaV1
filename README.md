@@ -1,2 +1,1 @@
-# A test for a website I am making called Gengchi.fun
-# All code is written by 'GengchiMaster123'
+link is https://haynbit123.github.io/Genchi.PreAlphaV1/
