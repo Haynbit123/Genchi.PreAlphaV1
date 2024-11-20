@@ -4,14 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function openRatingModal() {
         const name = prompt("Please enter your name:");
         if (name) {
-            const rating = prompt("Please rate us from 1 to 5 stars:");
-            if (rating) {
-                sendRating(name, rating);
-            }
+            let rating;
+            do {
+                rating = prompt("Please rate us from 1 to 5 stars:");
+                if (rating === null) return; // Exit if the user cancels
+            } while (!rating || isNaN(rating) || rating < 1 || rating > 5);
+
+            const feedback = prompt("Please provide additional feedback:");
+            sendRating(name, rating, feedback);
         }
     }
 
-    function sendRating(name, rating) {
+    function sendRating(name, rating, feedback) {
         fetch(webhookUrl, {
             method: 'POST',
             headers: {
@@ -21,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 embeds: [{
                     title: "New Rating Received",
                     description: `${name} rated ${rating} stars`,
+                    fields: [
+                        { name: "Feedback", value: feedback || "No feedback provided" }
+                    ],
                     color: 15258703 // You can choose any hex color
                 }]
             })
