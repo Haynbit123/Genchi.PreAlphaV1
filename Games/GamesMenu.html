@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Games</title>
+    <style>
+        /* Center the text */
+        body {
+            background: url('GameImages/BackgroundImage.jpeg') no-repeat center center fixed; 
+            background-size: cover;
+            color: black;
+            text-align: center;
+            margin: 0; /* Remove default margin */
+            padding-top: 20px; /* Add padding at the top */
+        }
+
+        /* Style the button */
+        button {
+            padding: 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: inline-block; /* Ensure buttons are in a line */
+            margin: 10px; /* Add margin between buttons */
+            text-align: center; /* Center-align text */
+        }
+
+        /* Ensure images fit inside the button */
+        button img {
+            width: 150px; /* Adjust the size as needed */
+            height: auto;
+            border-radius: 50px;
+            border: 10px solid rgb(73, 84, 211);
+            display: block; /* Center the image */
+            margin: 0 auto; /* Center the image */
+        }
+
+        button:hover img {
+            filter: brightness(0.9); /* Slightly darken the image on hover */
+        }
+
+        /* Style the title under the image */
+        button .title {
+            margin-top: 5px; /* Add space between image and text */
+            font-size: 16px; /* Adjust the font size as needed */
+            font-weight: bold; /* Make the text bold */
+            color: black; /* Adjust the color as needed */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Games Menu! Select a game to play.</h1>
+
+    <button class="Slope" onclick="window.location.href='Games/Slope.html';">
+        <img src="GameImages/SlopeLogo.jpeg" alt="Slope">
+        <div class="title">Slope</div>
+    </button>
+
+    <button class="Flappy Bird" onclick="window.location.href='Games/Flappybird.html';">
+        <img src="GameImages/FlappybirdLogo.jpeg" alt="Flappy Bird">
+        <div class="title">Flappy Bird</div>
+    </button>
+
+    <button class="Gunspin" onclick="window.location.href='Games/Gunspin.html';">
+        <img src="GameImages/GunspinLogo.webp" alt="Gunspin">
+        <div class="title">Gunspin</div>
+    </button>
+
+    <button class="Time Shooter 2" onclick="window.location.href='Games/TimeShooter2.html';">
+        <img src="GameImages/TimeShooter2Logo.webp" alt="Time Shooter 2">
+        <div class="title">Time Shooter 2</div>
+    </button>
+
+    <button class="Time Shooter 3" onclick="window.location.href='Games/TimeShooter3.html';">
+        <img src="GameImages/TimeShooter3Logo.webp" alt="Time Shooter 3">
+        <div class="title">Time Shooter 3</div>
+    </button>
+
+    <button class="Snowball.io" onclick="window.location.href='Games/Snowballio.html';">
+        <img src="GameImages/SnowballioLogo.webp" alt="Snowball.io">
+        <div class="title">Snowball.io</div>
+    </button>
+
+    <button class="Minecraft 1.8" onclick="window.location.href='Games/Minecraft1.8.html';">
+        <img src="GameImages/MinecraftLogo.webp" alt="Minecraft 1.8">
+        <div class="title">Minecraft 1.8 (kinda buggy)</div>
+    </button>
+
+    <button class="Recoil" onclick="window.location.href='Games/Recoil.html';">
+        <img src="GameImages/RecoilLogo.webp" alt="Recoil">
+        <div class="title">Recoil</div>
+    </button>
+
+    <button class="Rooftop Snipers" onclick="window.location.href='Games/RooftopSnipers.html';">
+        <img src="GameImages/RooftopSnipersLogo.webp" alt="Rooftop Snipers">
+        <div class="title">Rooftop Snipers</div>
+    </button>
+
+    <button class="Dino Runner Game" onclick="window.location.href='Games/DinoRunnerGame.html';">
+        <img src="GameImages/DinoRunnerGameLogo.webp" alt="Dino Runner Game">
+        <div class="title">Dino Runner Game</div>
+    </button>
+
+    <button class="Paper.io 2" onclick="window.location.href='Games/PaperIO2.html';">
+        <img src="GameImages/PaperIO2Logo.webp" alt="Paper.io 2">
+        <div class="title">Paper.io 2</div>
+    </button>
+</body>
+</html>
