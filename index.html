@@ -82,6 +82,26 @@
             font-weight: bold; /* Make the text bold */
             color: black; /* Adjust the color as needed */
         }
+
+        /* Style for the small rating button */
+        .rating {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .rating button {
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .rating button:hover {
+            background-color: #e67e22;
+        }
     </style>
 </head>
 <body>
@@ -105,5 +125,12 @@
             <div class="title">Video Player</div>
         </button>
     </div>
+
+    <!-- Add the rating button here -->
+    <div class="rating">
+        <button onclick="openRatingModal()">Rate Us</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
