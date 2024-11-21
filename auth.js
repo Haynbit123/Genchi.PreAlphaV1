@@ -2,27 +2,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('login-form');
     const signupForm = document.getElementById('signup-form');
 
+    // Handle Signup
     signupForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const username = document.getElementById('signup-username').value;
+        const email = document.getElementById('signup-email').value;
         const password = document.getElementById('signup-password').value;
-        // Save user data to local storage
-        localStorage.setItem(username, password);
-        alert('Signup successful! You can now log in.');
+
+        // Firebase signup
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                alert('Signup successful! You can now log in.');
+                signupForm.reset();
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
     });
 
+    // Handle Login
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const username = document.getElementById('login-username').value;
+        const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
-        // Retrieve user data from local storage
-        const storedPassword = localStorage.getItem(username);
-        if (storedPassword === password) {
-            alert('Login successful!');
-            // Redirect to MainMenu.html
-            window.location.href = 'MainMenu.html';
-        } else {
-            alert('Invalid username or password.');
-        }
+
+        // Firebase login
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                alert('Login successful!');
+                // Redirect to MainMenu.html
+                window.location.href = 'MainMenu.html';
+            })
+            .catch((error) => {
+                alert('Invalid email or password.');
+            });
     });
 });
