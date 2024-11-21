@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const storedPassword = localStorage.getItem(username);
         if (storedPassword === password) {
             alert('Login successful!');
-            // Redirect to the main page or user dashboard
+            // Redirect to MainMenu.html
+            window.location.href = 'MainMenu.html';
         } else {
             alert('Invalid username or password.');
         }
